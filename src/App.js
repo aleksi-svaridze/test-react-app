@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import UserForm from "./form/UserForm";
+import useCount from "./hooks/useCount";
 
 function App() {
+  const { count, decrement, increment } = useCount(0);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <UserForm />
+        <div style={{ padding: "20px 0" }}>
+          <button onClick={increment}>Increment</button>
+          <h1>{count}</h1>
+          <button onClick={decrement}>Decrement</button>
+        </div>
       </header>
     </div>
   );
