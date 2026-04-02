@@ -12,5 +12,5 @@
 
 ## Links
 
-    - (Live Template)[https://harmonious-pie-089741.netlify.app/]
-    - (Github)[https://github.com/aleksi-svaridze/test-react-app]
+[Live Template](https://harmonious-pie-089741.netlify.app/)
+[Github](https://github.com/aleksi-svaridze/test-react-app)
