@@ -1,20 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import UserForm from "./form/UserForm";
-import useCount from "./hooks/useCount";
+import UserForm from "./form/CounterForm";
+import { useState } from "react";
+import Counter from "./counter/Counter";
 
 function App() {
-  const { count, decrement, increment } = useCount(0);
+  const [inputValue, setInputValue] = useState(0);
+  console.log(inputValue, " App.js");
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <UserForm />
-        <div style={{ padding: "20px 0" }}>
-          <button onClick={increment}>Increment</button>
-          <h1>{count}</h1>
-          <button onClick={decrement}>Decrement</button>
-        </div>
+        <UserForm inputValue={inputValue} setInputValue={setInputValue} />
+        <Counter startNumber={inputValue} />
       </header>
     </div>
   );

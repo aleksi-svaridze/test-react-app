@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function useCount(startNumber = 0) {
+function useCount({ startNumber = 0 }) {
   const [count, setCount] = useState(startNumber);
+
+  useEffect(() => {
+    setCount(Number(startNumber));
+  }, [startNumber]);
 
   const increment = () => {
     setCount((prev) => prev + 1);
